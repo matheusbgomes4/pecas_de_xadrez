@@ -1,38 +1,56 @@
 #include <stdio.h>
 
-int main() {
-    // ==============================
-    // NÍVEL NOVATO – TORRE, BISPO, RAINHA
-    // ==============================
-
-    // TORRE -> 5 casas à direita (FOR)
-    int casas_torre = 5;
+// Função da Torre
+void moverTorre(int casas) {
     printf("Movimento da TORRE:\n");
-    for (int i = 1; i <= casas_torre; i++) {
+    for (int i = 0; i < casas; i++) {
         printf("Direita\n");
     }
     printf("\n");
+}
 
-    // BISPO -> 5 casas diagonal cima-direita (WHILE)
-    int casas_bispo = 5;
-    int contador_bispo = 1;
+// Função do Bispo
+void moverBispo(int casas) {
     printf("Movimento do BISPO:\n");
-    while (contador_bispo <= casas_bispo) {
+    for (int i = 0; i < casas; i++) {
         printf("Cima, Direita\n");
-        contador_bispo++;
     }
     printf("\n");
+}
 
-    // RAINHA -> 8 casas à esquerda (DO-WHILE)
-    int casas_rainha = 8;
-    int contador_rainha = 1;
+// Função da Rainha
+void moverRainha(int casas) {
     printf("Movimento da RAINHA:\n");
-    do {
+    for (int i = 0; i < casas; i++) {
         printf("Esquerda\n");
-        contador_rainha++;
-    } while (contador_rainha <= casas_rainha);
+    }
+    printf("\n");
+}
 
-    printf("\nSimulação finalizada!\n");
+// NOVO: Função do Cavalo
+void moverCavalo(int movimentos) {
+    printf("Movimento do CAVALO:\n");
+    for (int i = 0; i < movimentos; i++) {
+        printf("Cima\n");
+        printf("Cima\n");
+        printf("Direita\n");
+    }
+    printf("\n");
+}
+
+int main() {
+    int casasTorre = 5;
+    int casasBispo = 5;
+    int casasRainha = 8;
+    int movimentosCavalo = 3;
+
+    moverTorre(casasTorre);
+    moverBispo(casasBispo);
+    moverRainha(casasRainha);
+    moverCavalo(movimentosCavalo);
+
+    printf("Simulação finalizada!\n");
     return 0;
 }
+
 
